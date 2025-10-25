@@ -10,15 +10,6 @@ const apiClient = axios.create({
   },
 });
 
-// Add JWT token to requests if available
-apiClient.interceptors.request.use((config) => {
-  const token = localStorage.getItem('auth_token');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
-
 export const api = {
   async searchClients(search: string, limit: number = 20): Promise<Client[]> {
     const response = await apiClient.get('/clients', {
