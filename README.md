@@ -25,14 +25,21 @@ Frontend Next.js application for Silver SQL Console - a SQL query execution inte
 
 ### Prerequisites
 
-- Node.js 20+
-- pnpm (recommended) or npm
+- **Volta** (recommended for Node.js version management)
+- Node.js 20.11.0 (managed by Volta)
+- Yarn 1.22.21 (managed by Volta)
 
 ### Installation
 
 ```bash
+# Install Volta (if not already installed)
+curl https://get.volta.sh | bash
+
+# Volta will automatically use the correct Node.js and Yarn versions
+# defined in package.json
+
 # Install dependencies
-pnpm install
+yarn install
 
 # Copy environment variables
 cp .env.example .env.local
@@ -44,7 +51,7 @@ cp .env.example .env.local
 
 ```bash
 # Run development server
-pnpm dev
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -53,10 +60,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```bash
 # Create production build
-pnpm build
+yarn build
 
 # Start production server
-pnpm start
+yarn start
 ```
 
 ## Environment Variables
